@@ -1,0 +1,29 @@
+name: build
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 0 2 * * 6
+
+env:
+  tag: ghcr.io/${{ github.repository_owner }}/workstation-bootc:latest
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: sudo podman build -t ${{ env.tag }} .
+
+      - name: Log in to container registry
+        run: sudo podman login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} ghcr.io
+
+      - name: Push container
+        run: sudo podman push ${{ env.tag }}
