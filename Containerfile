@@ -1,9 +1,3 @@
-FROM quay.io/fedora/fedora-bootc:40
-
-COPY packages.sh /
-COPY 2022-RH-IT-Root-CA.pem /etc/pki/ca-trust/source/anchors/
-COPY rpmfusion.repo /etc/yum.repos.d/
-RUN /packages.sh; rm /packages.sh
-
-COPY config.sh /
-RUN /config.sh; rm /config.sh
+FROM quay.io/centos-bootc/centos-bootc:stream9
+RUN dnf -y install cockpit-ws cockpit-bridge
+RUN systemctl enable cockpit.socket
