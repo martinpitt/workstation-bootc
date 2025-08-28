@@ -48,9 +48,6 @@ dnf install -y \
     alsa-plugins-pulseaudio \
     gstreamer1-plugins-good \
     gstreamer1-plugins-bad-free \
-    gstreamer1-plugin-openh264 \
-    gstreamer1-libav \
-    libavdevice \
     xdg-desktop-portal-gtk \
     pavucontrol \
     pcmanfm \
