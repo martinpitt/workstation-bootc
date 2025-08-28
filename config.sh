@@ -18,6 +18,8 @@ ln -s ../systemd-timesyncd.service /usr/lib/systemd/system/sysinit.target.wants/
 
 # disable unwanted services
 ln -sfn /dev/null /usr/lib/systemd/user/at-spi-dbus-bus.service
+# no spontaneous updates/reboots
+rm /usr/lib/systemd/system/default.target.wants/bootc-fetch-apply-updates.timer
 
 # move OS systemd unit defaults to /usr
 cp -a --verbose /etc/systemd/system /etc/systemd/user /usr/lib/systemd/
