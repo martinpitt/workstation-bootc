@@ -6,6 +6,7 @@ dnf install -y \
     kernel-modules-extra \
     iwlwifi-mvm-firmware \
     alsa-sof-firmware \
+    blueman \
     NetworkManager-wifi \
     NetworkManager-openvpn-gnome \
     powertop \
