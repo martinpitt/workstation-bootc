@@ -107,6 +107,10 @@ dnf remove -y \
     xdg-desktop-portal-wlr \
     zram-generator
 
+# run0!
+rm /etc/dnf/protected.d/sudo.conf
+dnf remove -y sudo
+
 rpm -qa 'qemu-user-static*' | xargs dnf remove -y
 
 dnf clean all
