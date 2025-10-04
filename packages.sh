@@ -111,6 +111,9 @@ dnf remove -y \
 rm /etc/dnf/protected.d/sudo.conf
 dnf remove -y sudo
 
+# not packaged separately; only used by /usr/share/gvfs/mounts/admin.mount which I don't need
+rm -f /usr/bin/pkexec
+
 rpm -qa 'qemu-user-static*' | xargs dnf remove -y
 
 dnf clean all
