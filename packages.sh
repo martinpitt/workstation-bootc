@@ -52,6 +52,7 @@ dnf install -y \
     xdg-desktop-portal-gtk \
     pavucontrol \
     pcmanfm \
+    nm-applet \
     nm-connection-editor \
     eog \
     evince \
