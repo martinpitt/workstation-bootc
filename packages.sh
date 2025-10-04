@@ -93,6 +93,7 @@ dnf remove -y \
     lvm2-libs \
     nfs-utils \
     nilfs-utils \
+    nodejs \
     passim-libs \
     quota-nls \
     rpcbind \
