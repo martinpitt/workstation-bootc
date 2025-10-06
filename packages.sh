@@ -14,6 +14,7 @@ dnf install -y \
 
 # shell tools and development
 dnf install -y \
+    buildah \
     cyrus-sasl-plain \
     fpaste \
     git \
