@@ -9,6 +9,9 @@ dnf install -y \
     blueman \
     NetworkManager-wifi \
     NetworkManager-openvpn-gnome \
+    tpm2-pkcs11-tools \
+    tpm2-pkcs11 \
+    tpm2-tools \
     powertop \
     wpa_supplicant
 
