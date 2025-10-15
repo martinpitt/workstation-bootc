@@ -113,8 +113,13 @@ dnf remove -y \
     zram-generator
 
 # run0!
-rm /etc/dnf/protected.d/sudo.conf
+rm /etc/dnf/protected.d/sudo.conf /usr/share/dnf5/libdnf.conf.d/protect-sudo.conf
 dnf remove -y sudo
+# dnf does not fail if sudo removal fails, so double-check
+if rpm -q sudo; then
+    echo "sudo removal failed"
+    exit 1
+fi
 
 # not packaged separately; only used by /usr/share/gvfs/mounts/admin.mount which I don't need
 rm -f /usr/bin/pkexec
