@@ -3,114 +3,80 @@ set -eux
 
 # hardware/drivers
 dnf install -y \
-    kernel-modules-extra \
-    iwlwifi-mvm-firmware \
-    alsa-sof-firmware \
-    blueman \
-    NetworkManager-wifi \
-    NetworkManager-openvpn-gnome \
+    powertop \
     tpm2-pkcs11-tools \
     tpm2-pkcs11 \
     tpm2-tools \
-    powertop \
-    wpa_supplicant
+
 
 # shell tools and development
 dnf install -y \
-    buildah \
     cyrus-sasl-plain \
     fpaste \
-    git \
-    glibc-langpack-de \
-    glibc-langpack-en \
     isync \
     krb5-workstation \
-    man-db \
-    mtr \
     mutt  \
     neovim \
-    nmap-ncat \
+    openssl \
     restic \
     rsync \
     strace \
     syncthing \
-    systemd-container \
-    toolbox \
-    tree \
     w3m \
-    wget
 
-# desktop plumbing/apps
+
+# desktop apps
 dnf install -y \
-    dejavu-sans-fonts \
-    dejavu-serif-fonts \
-    dejavu-sans-mono-fonts \
-    flatpak \
-    fontawesome-fonts \
-    google-noto-emoji-color-fonts \
-    gvfs-mtp \
-    pulseaudio-utils \
-    alsa-plugins-pulseaudio \
-    gstreamer1-plugins-good \
-    gstreamer1-plugins-bad-free \
-    xdg-desktop-portal-gtk \
-    pavucontrol \
-    pcmanfm \
-    nm-applet \
-    nm-connection-editor \
-    eog \
     evince \
-    rhythmbox \
-    gnome-keyring \
-    pinentry-gnome3 \
     mate-polkit \
-    lxterminal \
-    gnome-disk-utility \
-    rofimoji
+    rhythmbox \
+    rofimoji \
+    vte291 \
+
 
 # sway/wayland desktop
 dnf install -y \
-    sway \
-    swayidle \
-    swaylock \
-    kanshi \
-    mako \
-    waybar \
-    slurp \
-    grim \
-    xorg-x11-server-Xwayland \
-    firefox \
     wofi \
     brightnessctl \
     wl-clipboard
 
 dnf remove -y \
-    NetworkManager-cloud-setup \
-    adcli \
+    antiword \
     avahi \
-    btrfs-progs \
+    b43-fwcutter \
+    b43-openfwwf \
     chrony \
-    cloud-utils-growpart \
+    cups \
+    firewalld \
     fwupd \
-    libosinfo \
+    ghostscript \
+    gutenprint-libs \
+    hyperv-daemons \
+    ibus \
+    ipp-usb \
     lvm2 \
     lvm2-libs \
+    ModemManager \
     nfs-utils \
     nilfs-utils \
     nodejs \
     passim-libs \
+    ppp \
     quota-nls \
     rpcbind \
     sssd-common \
     sssd-nfs-idmap \
     sos \
-    tracker \
-    tracker-miners \
+    system-config-printer \
     udftools \
+    usb_modeswitch \
     vim-data \
     vim-minimal \
-    xdg-desktop-portal-wlr \
+    virtualbox-guest-additions \
     zram-generator
+
+# flatpaks
+flatpak uninstall --all -y
 
 # run0!
 rm /etc/dnf/protected.d/sudo.conf /usr/share/dnf5/libdnf.conf.d/protect-sudo.conf
