@@ -56,11 +56,13 @@ dnf remove -y \
     ipp-usb \
     lvm2 \
     lvm2-libs \
+    mcelog \
     ModemManager \
     nfs-utils \
     nilfs-utils \
     nodejs \
     passim-libs \
+    pcsc-lite \
     ppp \
     quota-nls \
     rpcbind \
@@ -69,6 +71,7 @@ dnf remove -y \
     sos \
     system-config-printer \
     udftools \
+    uresourced \
     usb_modeswitch \
     vim-data \
     vim-minimal \
