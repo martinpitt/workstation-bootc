@@ -36,9 +36,11 @@ dnf install -y \
 
 # sway/wayland desktop
 dnf install -y \
-    wofi \
     brightnessctl \
-    wl-clipboard
+    waypipe \
+    wl-clipboard \
+    wofi \
+
 
 dnf remove -y \
     antiword \
