@@ -1,6 +1,14 @@
 #!/bin/sh
 set -eux
 
+# remove repos that I don't want
+(cd /etc/yum.repos.d/;
+ rm '_copr:copr.fedorainfracloud.org:phracek:PyCharm.repo';
+ rm google-chrome.repo;
+ rm rpmfusion-nonfree-nvidia-driver.repo;
+ rm rpmfusion-nonfree-steam.repo;
+)
+
 # hardware/drivers
 dnf install -y \
     powertop \
