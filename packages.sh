@@ -11,6 +11,8 @@ set -eux
 
 # hardware/drivers
 dnf install -y \
+    gstreamer1-plugin-openh264 \
+    openh264 \
     powertop \
     tpm2-pkcs11-tools \
     tpm2-pkcs11 \
