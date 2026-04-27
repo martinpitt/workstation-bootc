@@ -1,4 +1,4 @@
-FROM quay.io/fedora/fedora-sway-atomic:43
+FROM quay.io/fedora/fedora-sway-atomic:44
 
 COPY packages.sh config.sh /
 COPY 2022-RH-IT-Root-CA.pem /etc/pki/ca-trust/source/anchors/
